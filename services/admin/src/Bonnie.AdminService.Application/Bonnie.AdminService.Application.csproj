@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Bonnie.AdminService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AutoMapper" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Ddd.Application" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="7.1.0" />
+        <ProjectReference Include="..\Bonnie.AdminService.Application.Contracts\Bonnie.AdminService.Application.Contracts.csproj" />
+        <ProjectReference Include="..\Bonnie.AdminService.Domain\Bonnie.AdminService.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

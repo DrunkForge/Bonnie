@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>Bonnie.AdminService</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Bonnie.AdminService.EntityFrameworkCore\Bonnie.AdminService.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\Bonnie.AdminService.TestBase\Bonnie.AdminService.TestBase.csproj" />
+	</ItemGroup>
+
+</Project>

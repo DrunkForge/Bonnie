@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Bonnie.ExpenseManagement</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Ddd.Domain" Version="7.1.0" />
+        <ProjectReference Include="..\Bonnie.ExpenseManagement.Domain.Shared\Bonnie.ExpenseManagement.Domain.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

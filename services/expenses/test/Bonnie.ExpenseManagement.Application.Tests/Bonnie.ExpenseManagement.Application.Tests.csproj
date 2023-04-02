@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Bonnie.ExpenseManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Bonnie.ExpenseManagement.Application\Bonnie.ExpenseManagement.Application.csproj" />
+    <ProjectReference Include="..\Bonnie.ExpenseManagement.Domain.Tests\Bonnie.ExpenseManagement.Domain.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

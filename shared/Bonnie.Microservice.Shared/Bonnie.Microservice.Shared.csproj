@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\services\admin\src\Bonnie.AdminService.EntityFrameworkCore\Bonnie.AdminService.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\Bonnie.Hosting.Shared\Bonnie.Hosting.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

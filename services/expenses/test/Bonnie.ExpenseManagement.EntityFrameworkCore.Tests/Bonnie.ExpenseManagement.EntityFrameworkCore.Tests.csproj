@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Bonnie.ExpenseManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
+    <ProjectReference Include="..\..\src\Bonnie.ExpenseManagement.EntityFrameworkCore\Bonnie.ExpenseManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Bonnie.ExpenseManagement.TestBase\Bonnie.ExpenseManagement.TestBase.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.1.0" />
+  </ItemGroup>
+
+</Project>

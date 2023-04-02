@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..</DockerfileContext>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="appsettings.json" />
+        <Content Include="appsettings.json">
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="appsettings.secrets.json" />
+        <Content Include="appsettings.secrets.json">
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+        <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Autofac" Version="7.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Logs\**" />
+        <Content Remove="Logs\**" />
+        <EmbeddedResource Remove="Logs\**" />
+        <None Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\services\admin\src\Bonnie.AdminService.Application.Contracts\Bonnie.AdminService.Application.Contracts.csproj" />
+        <ProjectReference Include="..\..\services\admin\src\Bonnie.AdminService.EntityFrameworkCore\Bonnie.AdminService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\services\auth\src\Bonnie.AuthService.Application.Contracts\Bonnie.AuthService.Application.Contracts.csproj" />
+        <ProjectReference Include="..\..\services\auth\src\Bonnie.AuthService.EntityFrameworkCore\Bonnie.AuthService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\services\expenses\src\Bonnie.ExpenseManagement.Application.Contracts\Bonnie.ExpenseManagement.Application.Contracts.csproj" />
+        <ProjectReference Include="..\..\services\expenses\src\Bonnie.ExpenseManagement.EntityFrameworkCore\Bonnie.ExpenseManagement.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\services\saas\src\Bonnie.SaaSService.Application.Contracts\Bonnie.SaaSService.Application.Contracts.csproj" />
+        <ProjectReference Include="..\..\services\saas\src\Bonnie.SaaSService.EntityFrameworkCore\Bonnie.SaaSService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\Bonnie.Microservice.Shared\Bonnie.Microservice.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,121 @@
+version: '3.7'
+
+volumes:
+  mongo_data:
+  pgadmin_data:
+  portainer_data:
+  postgres_data:
+  seq_data:
+
+networks:
+  df-network:
+    external: true
+
+services:
+
+#   mongo:
+#     env_file: .env
+#     image: mongo
+#     container_name: mongo
+#     restart: always
+#     volumes:
+#       - mongo_data:/data/db
+#     networks:
+#       - df-network
+#     ports:
+#       - 27017:27017
+
+  portainer:
+    env_file: .env
+    image: portainer/portainer-ce
+    container_name: portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - df-network
+    ports:
+      - 8000:8000
+      - 9443:9443
+
+  portainer.agent:
+    env_file: .env
+    image: portainer/agent:latest
+    container_name: portainer_agent
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    networks:
+      - df-network
+    ports:
+      - 9001:9001
+
+  postgres:
+    env_file: .env
+    image: postgres:latest
+    container_name: postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U root" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - df-network
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    env_file: .env
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - df-network
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+
+  rabbitmq:
+    env_file: .env
+    image: rabbitmq:management-alpine
+    container_name: rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    networks:
+      - df-network
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  redis:
+    env_file: .env
+    image: redis:alpine
+    container_name: redis
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+    networks:
+      - df-network
+    ports:
+      - "6379:6379"
+
+  seq:
+    env_file: .env
+    image: datalust/seq:latest
+    container_name: seq
+    volumes:
+      - seq_data:/data
+    networks:
+      - df-network
+    ports:
+      - "5341:80"

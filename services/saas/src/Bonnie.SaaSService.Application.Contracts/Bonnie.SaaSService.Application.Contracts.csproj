@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Bonnie.SaaSService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Authorization" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="7.1.0" />
+        <ProjectReference Include="..\Bonnie.SaaSService.Domain.Shared\Bonnie.SaaSService.Domain.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

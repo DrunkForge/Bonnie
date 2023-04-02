@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Bonnie.AuthService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Account.HttpApi.Client" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Http.Client" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="7.1.0" />
+        <ProjectReference Include="..\Bonnie.AuthService.Application.Contracts\Bonnie.AuthService.Application.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="**\*generate-proxy.json" />
+        <Content Remove="**\*generate-proxy.json" />
+    </ItemGroup>
+
+</Project>

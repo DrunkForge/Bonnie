@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Bonnie.AdminService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Bonnie.AdminService.Application\Bonnie.AdminService.Application.csproj" />
+    <ProjectReference Include="..\Bonnie.AdminService.Domain.Tests\Bonnie.AdminService.Domain.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

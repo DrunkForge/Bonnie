@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Bonnie.DbMigrator": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

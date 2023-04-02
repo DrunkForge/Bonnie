@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Bonnie.AuthService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
+    <ProjectReference Include="..\..\src\Bonnie.AuthService.EntityFrameworkCore\Bonnie.AuthService.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Bonnie.AuthService.TestBase\Bonnie.AuthService.TestBase.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.1.0" />
+  </ItemGroup>
+
+</Project>

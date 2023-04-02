@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Bonnie.AuthService</RootNamespace>
+        <PreserveCompilationReferences>true</PreserveCompilationReferences>
+        <UserSecretsId>Bonnie.AuthService-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..\..\..</DockerfileContext>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\shared\Bonnie.Hosting.Shared\Bonnie.Hosting.Shared.csproj" />
+        <ProjectReference Include="..\..\..\admin\src\Bonnie.AdminService.EntityFrameworkCore\Bonnie.AdminService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\..\saas\src\Bonnie.SaaSService.EntityFrameworkCore\Bonnie.SaaSService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\src\Bonnie.AuthService.HttpApi\Bonnie.AuthService.HttpApi.csproj" />
+        <ProjectReference Include="..\..\src\Bonnie.AuthService.Application\Bonnie.AuthService.Application.csproj" />
+        <ProjectReference Include="..\..\src\Bonnie.AuthService.EntityFrameworkCore\Bonnie.AuthService.EntityFrameworkCore.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Logs\**" />
+        <Content Remove="Logs\**" />
+        <EmbeddedResource Remove="Logs\**" />
+        <None Remove="Logs\**" />
+    </ItemGroup>
+
+</Project>

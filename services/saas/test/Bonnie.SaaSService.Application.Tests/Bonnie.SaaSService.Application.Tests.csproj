@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Bonnie.SaaSService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Bonnie.SaaSService.Application\Bonnie.SaaSService.Application.csproj" />
+    <ProjectReference Include="..\Bonnie.SaaSService.Domain.Tests\Bonnie.SaaSService.Domain.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

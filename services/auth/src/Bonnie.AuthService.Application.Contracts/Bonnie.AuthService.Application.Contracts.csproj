@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>Bonnie.AuthService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Authorization" Version="7.1.0" />
+        <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="7.1.0" />
+        <ProjectReference Include="..\Bonnie.AuthService.Domain.Shared\Bonnie.AuthService.Domain.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
